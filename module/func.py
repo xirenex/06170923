@@ -95,32 +95,32 @@ def sendQuickreply(event):  #快速選單
 def sendButton(event):  #按鈕樣版
     try:
 {
-  "type": "template",
-  "altText": "this is a carousel template",
-  "template": {
-    "type": "carousel",
-    "actions": [],
-    "columns": [
+  type: template,
+  altText=' this is a carousel template',
+  template= {
+    type: carousel,
+    actions= [],
+    columns= [
       {
-        "thumbnailImageUrl": "https://i.imgur.com/aPS74vw.gif",
-        "title": "Hello!",
-        "text": "0508",
-        "actions": [
+        thumbnailImageUrl='https://i.imgur.com/aPS74vw.gif',
+        title= Hello!,
+        text= '0508',
+        actions= [
           {
-            "type": "message",
-            "label": "文字訊息",
-            "text": "@購買商品"
+            type= 'message',
+            label= '文字訊息',
+            text= '@購買商品'
           },
           {
-            "type": "uri",
-            "label": "造訪網站",
-            "uri": "https://www.instagram.com/x.heyday/"
+            type= 'uri',
+            label= '造訪網站',
+            uri= 'https://www.instagram.com/x.heyday/'
           },
           {
-            "type": "postback",
-            "label": "回傳訊息",
-            "text": "@購買商品",
-            "data": "action=buy"
+            type= 'postback',
+            label= '回傳訊息',
+            text= '@購買商品',
+            data= 'action=buy'
           }
         ]
       }
