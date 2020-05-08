@@ -94,29 +94,39 @@ def sendQuickreply(event):  #快速選單
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 def sendButton(event):  #按鈕樣版
     try:
-        message = TemplateSendMessage(
-            alt_text='按鈕樣板',
-            template=ButtonsTemplate(
-                thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',  #顯示的圖片
-                title='按鈕樣版示範',  #主標題
-                text='請選擇：',  #副標題
-                actions=[
-                    MessageTemplateAction(  #顯示文字計息
-                        label='文字訊息',
-                        text='@購買披薩'
-                    ),
-                    URITemplateAction(  #開啟網頁
-                        label='連結網頁',
-                        uri='http://www.e-happy.com.tw'
-                    ),
-                    PostbackTemplateAction(  #執行Postback功能,觸發Postback事件
-                        label='回傳訊息',  #按鈕文字
-                        #text='@購買披薩',  #顯示文字計息
-                        data='action=buy'  #Postback資料
-                    ),
-                ]
-            )
-        )
+{
+  "type": "template",
+  "altText": "this is a carousel template",
+  "template": {
+    "type": "carousel",
+    "actions": [],
+    "columns": [
+      {
+        "thumbnailImageUrl": "https://i.imgur.com/aPS74vw.gif",
+        "title": "Hello!",
+        "text": "0508",
+        "actions": [
+          {
+            "type": "message",
+            "label": "文字訊息",
+            "text": "@購買商品"
+          },
+          {
+            "type": "uri",
+            "label": "造訪網站",
+            "uri": "https://www.instagram.com/x.heyday/"
+          },
+          {
+            "type": "postback",
+            "label": "回傳訊息",
+            "text": "@購買商品",
+            "data": "action=buy"
+          }
+        ]
+      }
+    ]
+  }
+}
         line_bot_api.reply_message(event.reply_token, message)
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
