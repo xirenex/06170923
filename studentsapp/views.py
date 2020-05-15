@@ -71,7 +71,7 @@ def hello3 (request,username):
 def index(request):
                 now=datetime.now()
                 username="daphne lo" 
-                return render(request,"index_form.html",locals())
+                return render(request,"06170923.html",locals())
 
 def listone(request): 
 	try: 
@@ -94,7 +94,7 @@ def insert(request):  #新增資料
     unit = student.objects.create(cName=cName, cSex=cSex, cBirthday=cBirthday, cEmail=cEmail,cPhone=cPhone, cAddr=cAddr) 
     unit.save()  #寫入資料庫
     students = student.objects.all().order_by('-id')  #讀取資料表, 依 id 遞減排序
-    return render(request, "5.html", locals())
+    return render(request, "listall.html", locals())
 	
 def modify(request):  #刪除資料
     unit = student.objects.get(cName='邱心怡')
