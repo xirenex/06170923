@@ -36,6 +36,7 @@ def callback(request):
     
                     elif mtext == '@傳送影片':
                         func.sendVedio(event)
+                
                     elif mtext == '@傳送貼圖':
                         func.sendStick(event)
     
@@ -65,11 +66,12 @@ def callback(request):
     
                     elif mtext == '@yes':
                         func.sendYes(event)
+                
                     elif mtext == '@圖片地圖':
                         func.sendImgmap(event)
+                        
                     elif mtext == '@日期時間':
                         func.sendDatetime(event)
-                        
                         
                     elif mtext == '@彈性配置':
                         func.sendFlex(event)
